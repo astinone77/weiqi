@@ -1,0 +1,55 @@
+
+.nav-top{
+    background-color: rgba(0,0,0,0.9);
+    color: #ffffff;
+}
+.list-content-top{
+    height: 230px;
+    width:100%;
+    background-color: #172A34;
+}
+.list-content-top .container{
+    position: relative;
+}
+.list-content-top div,.list-content-top h2,.list-content-top li{
+    color: #ffffff;
+    padding: 15px;
+}
+.list-content-top ul li{
+    display: inline-block;
+}
+
+.img-weiqi-1{
+    height: 100px;
+    width: auto;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.img-weiqi-1 img{
+    height:100%;
+    width:auto;
+}
+.content-main div div h4{
+    margin: 35px 15px 15px;
+    line-height: 2em;
+}
+.content-main .zangjie-nav li{
+    display: inline-block;
+}
+.content-main .zangjie-nav li,.content-main .zangjie-list li{
+    font-size: 18px;
+    padding: 20px;
+}
+.content-main .zangjie-list li{
+    border-top: 1px solid #cccccc;
+}
+.content-main .zangjie-list li:last-child{
+    border-bottom: 1px solid #cccccc;
+}
+.content-main .zangjie-list li a{
+    font-weight:600;
+}
+.zangjie-nav .active a{
+    color: #ff353d !important;
+}

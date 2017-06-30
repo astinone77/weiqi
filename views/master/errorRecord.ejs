@@ -1,0 +1,162 @@
+<% function isObjNull(obj) {
+    for (key in obj){
+        return false;
+    }
+    return true;
+}%>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!--this must be the first of meta-->
+    <%- include('./partial/baseMeta') -%>
+    <link rel="stylesheet" href="/css/master/record.css">
+    <link rel="stylesheet" href="/css/master/bookStyle.css">
+    <!--<script src="/js/master/record.js"></script>-->
+    <title>错题库</title>
+</head>
+<body>
+<!--s:nav-->
+<%- include('./partial/nav') -%>
+<!--s:nav-->
+<!--s:content-->
+<div class="width100 content-top">
+    <div class="container clearfix">
+        <div class="personal-head pull-left"><img src="/images/weiqi.png" alt="head"></div>
+        <div class="helloWords">
+            <p><span><%= nickName %></span>，<span class="thisHour"></span></p>
+            <p><span>《重送绝句》</span>&nbsp;<span>唐·杜牧</span>&nbsp;
+                <span>绝艺如君天下少，闲人似我世间无。
+            别后竹窗风雪夜，一灯明暗复吴图。</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="width100 bg-white">
+    <ul class="container list-inline classify-btn classify-btn-js clearfix">
+        <li class="active" data-url="/errorRecord">我的错题库</li>
+        <li class="" data-url="/practiceRecord">我的练习</li>
+        <li class="" data-url="/throughRecord">闯关记录</li>
+        <!--<li class="">我的收藏</li>-->
+    </ul>
+</div>
+<div class="container clearfix">
+    <h3 class="pic-classic pull-left"><img src="/images/bg-title-pic.png">我的错题库</h3>
+    <ul class="list-inline put-right-css put-right-js pull-right">
+        <li class="active" name="unfixed"><i class="fa fa-navicon"></i>&nbsp;未改错</li>
+        <li class="" name="haveFixed"><i class="fa fa-navicon"></i>&nbsp;已改错</li>
+        <!--<li>我的收藏</li>-->
+    </ul>
+</div>
+<div class="container content-main">
+    <div class="row" id="unfixed">
+        <% if (isObjNull(data)){ %>
+            <h4 class="text-center">好棒哦！没有错题哦~</h4>
+        <% } else { %>
+        <% data.forEach(function (v, i) { %>
+        <% if(!v.corrected) { %>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+            <div class="book-box  book-shadow">
+                <div class="box-title clearSpacing">
+                    <span class="title-lights"><i class="fa fa-circle"></i></span>
+                    <sapn class="book-title">书名:<%= v.name %>/单元:<%= v.catalogName %>/题号:<%= v.questionNo %>
+                        /知识点类型:<%= v.knowledgeType %>/知识点:<%= v.knowledgePoint %></sapn>
+                </div>
+                <div class="box-img">
+                    <img class="img-responsive canvas-two-img" data-src="<%= v.answer %>" alt="正在加载"/>
+                </div>
+                <div class="box-bottom">
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" style="width: 100%;background-color: #dddddd;">
+                            <!--<span class="sr-only">100%</span>-->
+                        </div>
+                    </div>
+                    <div class="book-btn clearSpacing">
+                        <button data-href="detail/<%= v.bookID %>/<%= v.chapter %>/<%= v.questionIndex %>?pattern=answer&questionID=<%= v.questionID %>"
+                                class="btn btn-info look-answer">查看答案
+                        </button>
+                        <button data-href="detail/<%= v.bookID %>/<%= v.chapter %>/<%= v.questionIndex %>?pattern=modifyError&detailID=<%= v.detailID %>&questionID=<%= v.questionID %>"
+                                class="btn btn-info modify-question">立即改错
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        <% }) %>
+        <% } %>
+    </div>
+    <div class="row" id="haveFixed" style="display: none;">
+        <% if (isObjNull(data)) { %>
+            <h4 class="text-center remind-js">有错必改，善莫大焉！快去改错吧~</h4>
+        <% } else { %>
+        <% data.forEach(function (v, i) { %>
+        <% if(v.corrected) { %>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+            <div class="book-box  book-shadow">
+                <div class="box-title clearSpacing">
+                    <span class="title-lights"><i class="fa fa-circle"></i></span>&nbsp;&nbsp;
+                    <sapn class="book-title">书名:<%= v.name %>/单元:<%= v.catalogName %>/题号:<%= v.questionNo %>
+                        /改错时间:<%= v.correctedTime %>/知识点类型:<%= v.knowledgeType %>/知识点:<%= v.knowledgePoint %></sapn>
+                </div>
+                <div class="box-img">
+                    <img class="img-responsive canvas-two-img" data-src="<%= v.answer %>" alt="正在加载"/>
+                </div>
+                <div class="box-bottom">
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" style="width: 1000%;">
+                            <span class="sr-only">100%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button data-href="detail/<%= v.bookID %>/<%= v.chapter %>/<%= v.questionIndex %>?pattern=answer&questionID=<%= v.questionID %>"
+                                class="btn btn-info look-answer">查看答案
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        <% }) %>
+        <% } %>
+    </div>
+</div>
+<!--s:content-->
+<!--s: footer-->
+<% if (data && isObjNull(data)) { %>
+    <%- include('./partial/footer-fixed') -%>
+<% }else { %>
+    <%- include('./partial/footer') -%>
+<% } %>
+<%- include('./partial/gototop') -%>
+<!--e: footer-->
+<script src="/js/master/getHelloWord.js"></script>
+<script src="/js/master/classifyBtnNav.js"></script>
+<script src="/js/sgf.min.js"></script>
+<script src="/js/master/checkTwoCanvas.js"></script>
+<script src="/libs/layer/layer.js"></script>
+<script>
+    $(function () {
+        getThisHours();
+        $(".look-answer,.modify-question").click(function () {
+            var href = $(this).attr('data-href');
+            layer.open({
+                type: 2,
+                title: '答案',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['80%', '90%'],
+                content: href
+            });
+        });
+        $('.put-right-js').find('li').click(function () {
+            var thisId = '#' + $(this).attr('name');
+            $(this).siblings('li').removeClass('active');
+            $(this).addClass('active');
+            $('.content-main').find('.row').css('display', 'none');
+            $(thisId).css('display', 'block');
+        })
+    })
+</script>
+</body>
+</html> 

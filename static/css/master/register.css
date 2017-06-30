@@ -1,0 +1,119 @@
+ html,
+ body {
+     width: 100%;
+     height:100%;
+     min-width: 480px;
+ }
+ 
+ li {
+     list-style: none;
+ }
+ 
+ input,
+ label,
+ div{
+     margin: 0;
+     padding:0;
+ }
+ 
+/*footer background*/
+footer.footer {
+    background-color: #eee;
+}
+footer.footer a:hover,footer.footer .footer-wrap .footer-sns a:hover{
+    color: #666;
+}
+ /*footer background*/
+
+.root-top,.root-foot{
+    width:100%;
+    overflow: hidden;
+}
+ .root-top {
+     height: 75%;
+     background: url('/images/bg-1.jpeg') no-repeat;
+     background-size: cover;
+ }
+ .root-foot{
+     height:25%;
+ }
+
+ .regTypeBtn {
+     width: 100%;
+     height: 50px;
+     text-align: center;
+     line-height: 50px;
+     background-color: #dbdbdb;
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+ }
+ 
+ .regTypeBtn a {
+     font-size: 22px;
+     color: #333;
+ }
+ 
+ .regTypeBtn a:hover {
+     text-decoration: none;
+ }
+
+ .regBox {
+     width: 70%;
+     max-width: 600px;
+     min-width: 340px;
+     position: absolute;
+     margin: auto;
+     top: 12%;
+     right: 0;
+     left: 0;
+     border-radius: 10px;
+     background-color: rgba(255, 255, 255, .8);
+     overflow: hidden;
+ }
+ .formBox {
+     padding: 35px 0;
+     text-align: center;
+ }
+
+ .formBox>form>div {
+     padding: 10px 0;
+ }
+ 
+ .formBox form div label:not([for="agreement"]),
+ .formBox form div input:not([type="checkbox"]) {
+     display: inline-block;
+     font-size: 14px;
+     height: 32px;
+     line-height: 32px;
+ }
+ 
+ .formBox form div label:not([for="agreement"]) {
+     width: 70px;
+     text-align: left;
+ }
+ 
+ .formBox form div input:not([type="checkbox"]) {
+     width: 240px;
+     padding-left: 7px;
+     border-radius: 5px;
+     border: 1px solid #ccc;
+ }
+ 
+ .formBox form div input[type="checkbox"] {
+     vertical-align: top;
+ }
+ 
+ .formBox form div label[for="agreement"] {
+     font-size: 12px;
+     margin-left: 5px;
+     color: #999;
+ }
+ 
+ .formBox form button[type="button"] {
+     width: 310px;
+     height: 42px;
+     color: #333;
+     background-color: #ddd;
+     border: none;
+     margin-bottom: 15px;
+ }

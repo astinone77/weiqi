@@ -1,49 +1,54 @@
+/**
+ * Created by zhengpeng on 2017/5/15.
+ */
+
+//引入express
 var express = require('express');
+//path
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
+//cookieParser
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var hbs = require('hbs');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
-
+//session
+var session = require('express-session');
+//日志模块
+var  morgan = require('morgan');
+//app
 var app = express();
 
-// view engine setup
-// app.set('view cache',true);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
-app.engine('html',hbs.__express);
 
-// uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+//中间件
+app.set('views','./views');
+app.set('view engine','ejs');
+app.use(express.static(path.join(__dirname,'static')));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+    secret: 'weiqi cat',
+    resave: false,
+    saveUninitialized: true
+}));
+//日志
+app.use(morgan('dev'));
 
-app.use('/', index);
-app.use('/users', users);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+//前台用户页面
+const master = require('./server/router/master');
+app.use('/', master);
+
+//后台管理系统
+const ops = require('./server/router/ops');
+app.use('/ops', ops);
+
+//ajax
+const api = require('./server/ajax/index');
+app.use('/api', api);
+
+app.get('*', function(req, res){
+    res.redirect('/')
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+var server = app.listen(8080,function(){
+    var host = server.address().address;
+    var port = server.address().port;
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    console.log('Example app listening at http://%s:%s', host, port);
 });
-
-module.exports = app;

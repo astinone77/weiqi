@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--this must be the first of meta-->
+    <%- include('./partial/baseMeta') -%>
+    <link rel="stylesheet" href="/css/master/register.css">
+    <title>登陆</title>
+    <style>
+        /*footer background*/
+        footer.footer {
+            background-color: #eee;
+        }
+
+        footer.footer a:hover, footer.footer .footer-wrap .footer-sns a:hover {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+<div class="root-top">
+    <div class="regBox">
+        <div class="regTypeBtn"><a href="#">登录</a></div>
+        <div id="login" class="formBox">
+            <form>
+                <div class="clearSpacing">
+                    <label for="loginName">账号</label>
+                    <input type="email" id="loginName" name="loginName" placeholder="请输入您的邮箱/手机号"
+                           autocomplete="autocomplete">
+                </div>
+                <div class="clearSpacing">
+                    <label for="loginPwd">密码</label>
+                    <input type="password" id="loginPwd" name="loginPwd" placeholder="请输入您的密码"
+                           autocomplete="autocomplete">
+                </div>
+                <p class="showMessage text-center" style="font-size: 12px;height: 18px;color: #f00"></p>
+                <button type="button" class="btn btn-default" id="registerNow">登录</button>
+                <div>
+                    <a href="javascript:;">忘记密码？</a>
+                    <span style="margin-left:20%">没有账号？<a href="/register">去注册&nbsp;&gt;</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('./partial/footer') -%>
+<script src="/libs/md5/md5.js"></script>
+<script src="/libs/layer/layer.js"></script>
+<script src="/js/master/base.js"></script>
+<script src="/js/master/login.js"></script>
+</body>
+
+</html>

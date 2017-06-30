@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <%- include('./partial/baseMeta') -%>
+    <link rel="stylesheet" href="/css/master/index.css">
+    <link rel="stylesheet" href="/css/master/bookStyle.css">
+    <title>格子岛围棋</title>
+</head>
+
+<body>
+    <!--s:头部-->
+    <%- include('./partial/nav') -%>
+    <!--s:头部-->
+    <!--s: 内容区域-->
+    <div class="container">
+        <!--<img src="/images/bg-yellow.jpg" alt="advertise">-->
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="/images/bg-yellow.jpg" alt="First slide">
+                    <a href="#"><div class="carousel-caption">围棋规则讲解</div></a>
+                </div>
+                <div class="item">
+                    <img src="/images/bg-yellow.jpg" alt="Second slide">
+                    <a href="#"><div class="carousel-caption">围棋简单入门教程</div></a>
+                </div>
+                <div class="item">
+                    <img src="/images/bg-yellow.jpg" alt="Third slide">
+                    <a href="#"><div class="carousel-caption">围棋进阶教程</div></a>
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel"
+               data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel"
+               data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+    <div class="index-main container iBox-shadow">
+        <div class="row books-wrap">
+            <% for(var i=0; i<result.bookList.length; i++) {%>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                <div class="book-box  book-shadow">
+                    <div class="box-title clearSpacing">
+                        <span class="title-lights"><i class="fa fa-circle"></i></span>&nbsp;&nbsp;
+                        <span class="book-title"><%= result.book[result.bookList[i]].name %></span>
+                    </div>
+                    <div class="box-img">
+                        <img class="img-responsive canvas-two-img" src="/images/photo.jpg" alt="正在加载" />
+                        <div class="book-info">
+                            <h4>书名：</h4>
+                            <p><%= result.book[result.bookList[i]].name %></p>
+                        </div>
+                    </div>
+                    <div class="box-bottom">
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-success" style="width: 100%;background-color: #dddddd;">
+                                <!--<span class="sr-only">100%</span>-->
+                            </div>
+                        </div>
+                        <div class="book-btn clearSpacing">
+                            <a href="/catalog/<%= result.book[result.bookList[i]].bookID %>/through" class="btn btn-info">闯关模式</a>
+                            <a href="/catalog/<%= result.book[result.bookList[i]].bookID %>/practice" class="btn btn-info">练习模式</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <!--e: 内容区域-->
+    <!--s: footer-->
+    <%- include('./partial/footer') -%>
+    <%- include('./partial/gototop') -%>
+    <!--e: footer-->
+    <script src="/libs/md5/md5.js"></script>
+    <script src="/js/master/base.js"></script>
+    <script>
+        setParamAfterUrl();
+        $(function () {
+            $('#myCarousel').carousel({
+                interval: 6000
+            })
+        })
+    </script>
+</body>
+
+</html>

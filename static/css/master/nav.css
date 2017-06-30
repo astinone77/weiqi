@@ -1,0 +1,195 @@
+/*导航栏极简样式start*/
+.mynav {
+    padding: 0 50px;
+    background-color: #2f3541;
+}
+
+@media screen and (max-width: 400px){
+    .mynav {
+        padding: 0 5px;
+    }
+}
+.mynav li,.mynav ul{
+    margin: 0;
+    padding: 0;
+}
+.clearSpacing {
+    font-size: 0;
+    letter-spacing: 0;
+    word-spacing: 0;
+}
+.mynav a,.mynav-header a{
+    color: #cccccc;
+}
+.mynav .mynav-menu div a{
+    color: #999;
+}
+.mynav .mynav-menu div a:hover{
+    color: #2DA9E5;
+}
+.mynav a:hover{
+    text-decoration: none;
+}
+.mynav-header,.mynav-menu{
+    display: inline-block;
+    width:50%;
+}
+
+.mynav-header{
+    font-size: 20px;
+    text-align: left;
+}
+.mynav-header a{
+    font-weight:500;
+}
+.mynav-menu{
+    position: relative;
+    font-size: 16px;
+    text-align: right;
+}
+.mynav-menu > li{
+    display: inline-block;
+    padding: 30px 20px;
+    border:none;
+    margin:0;
+}
+
+@media screen and (max-width: 400px) {
+    .mynav-menu > li{
+        padding: 30px 5px;
+    }
+}
+.mynav-header > a,.mynav-menu > li{
+    transition: .5s;
+}
+.mynav-header > a:hover,.mynav-menu > li:hover > a{
+    color: #FFFFFF;
+}
+.mynav-dropdown .username{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*导航栏极简样式end*/
+
+/*用户名下拉框样式 start*/
+
+.mynav-dropdown:hover > .dropdown-box {
+    /*display: block;*/
+    visibility: visible;
+    opacity: 1;
+    top: 80px;
+}
+
+.dropdown-box {
+    /*display: none;*/
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+    width: 300px;
+    position: absolute;
+    z-index:999;
+    top: 100px;
+    right: 0;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: #FFFFFF;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-box {
+        top: 40px;
+    }
+}
+
+.dropdown-box p, .dropdown-box span {
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.personal-head,.personal-username{
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+
+.personal-head > img {
+    width: 78px;
+    height: 78px;
+    border: 5px solid rgba(102, 204, 255, .2);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.personal-username {
+    padding: 14px 0 0 5px;
+}
+
+.personal-username p a span {
+    font-size: 16px;
+}
+
+.personal-menu {
+    margin: 10px 0;
+}
+
+.personal-menu > div {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    background-clip: content-box;
+    background-color: #EEEEEE;
+    padding: 2px;
+}
+
+.personal-menu > div span {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.personal-menu > div a {
+    display: block;
+    padding: 7px 0;
+}
+
+.latest-record {
+    padding-left: 13px;
+    color: #999;
+}
+
+.latest-record > p:first-child {
+    margin: 20px 0 0;
+}
+
+.latest-record > p:first-child span:first-child {
+    font-size: 18px;
+}
+
+.latest-record  .record-title,.latest-record  .go-on{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    padding: 5px 0;
+}
+.latest-record  .record-title {
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: underline;
+    text-align: left;
+    text-indent: 2em;
+}
+
+.latest-record  .go-on {
+    width: 15%;
+    text-align: right;
+}
+/*用户名下拉框样式 end*/

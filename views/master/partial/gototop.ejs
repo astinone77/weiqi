@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/master/gototop.css">
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="fa fa-chevron-circle-up"></i></a>
+</div>
+<script>
+    function goTop() {
+        this.init();
+    }
+    goTop.prototype = {
+        init: function () {
+            this.$jsGoTop = $('.gototop');
+            this.distanceToTop();
+            this.goToTop();
+        },
+        distanceToTop: function () {
+            var self = this;
+            $(window).scroll(function () {
+                var distance = $('body').scrollTop() || document.documentElement.scrollTop;
+                if (distance > 1) {
+                    self.$jsGoTop.addClass('active');
+                } else {
+                    self.$jsGoTop.removeClass('active');
+                }
+            })
+        },
+        goToTop:function () {
+            this.$jsGoTop.click(function () {
+                $('html,body').animate({scrollTop: 0}, 500);
+                return false;
+            })
+        }
+    }
+    $(function () {
+        new goTop();
+    })
+</script>

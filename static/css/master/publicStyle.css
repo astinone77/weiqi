@@ -1,0 +1,114 @@
+/*公共css样式*/
+
+html, body {
+    width: 100%;
+    background-color: #EEEEEE;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+.width100 {
+    width: 100%;
+}
+.height100{
+    height:100%;
+}
+
+.bg-white{
+    background-color: #FFFFFF;
+}
+.be-relative{
+    position: relative;
+}
+
+.clearSpacing {
+    font-size: 0;
+    letter-spacing: 0;
+    word-spacing: 0;
+}
+
+.no-underline:hover {
+    text-decoration: none;
+}
+
+.hover-green:hover {
+    color: #4dcd4e;
+}
+
+.iBox-shadow{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+.book-shadow {
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
+}
+
+/*闯关、练习、收藏页 分类按钮样式*/
+.classify-btn {
+    margin-bottom: 20px;
+}
+
+.classify-btn > li {
+    font-size: 17px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.classify-btn > li:hover {
+    background-color: #dddddd;
+    border-bottom: 3px solid #dddddd;
+}
+
+.classify-btn > li.active {
+    transition: .5s;
+    border-bottom: 3px solid #2DA9E5;
+    color: #2DA9E5 !important;
+}
+
+/*闯关、练习、收藏页 分类按钮样式*/
+
+.put-right-css > li{
+    height: 57px;
+    line-height: 57px;
+    font-size: 16px;
+    color: #999;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px){
+    .put-right-css > li{
+        font-size: 14px;
+        padding-left: 5px;
+    }
+}
+.put-right-css > li:hover{
+    color: #555;
+}
+.put-right-css > li.active{
+    color: #2DA9E5;
+}
+.content-top {
+    width: 100%;
+    padding: 40px 0;
+    /*background-color: #172A34;*/
+    background: url("/images/186829-106.jpg") repeat;
+}
+
+.content-main{
+    padding: 0 10px 50px;
+    min-height: 259px;
+}
+
+.pic-classic{
+    color: #5bc0de;
+    margin: 15px 0;
+}
+.pic-classic > img{
+    width: 27px;
+    height: 27px;
+    margin: -2px 15px 0 0;
+}

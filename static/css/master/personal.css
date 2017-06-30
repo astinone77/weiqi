@@ -1,0 +1,55 @@
+/*hello word*/
+
+div.container.settings{
+    margin-top: 20px;
+    background-color: #EEEEEE;
+}
+
+.personal-main{
+    margin-bottom: 70px;
+    margin-top: 70px;
+}
+
+.content-top + div {
+    background-color: #FFFFFF;
+}
+
+.helloWords > p {
+    color: #e0e0e0;
+}
+
+.helloWords > p:first-child {
+    font-size: 24px;
+}
+
+.helloWords > p > span{
+    padding-left: 15px;
+}
+
+/*hello word*/
+
+.personal-edit{
+    padding: 20px 30px 10px;
+}
+.personal-edit li{
+    font-size: 14px;
+    cursor: pointer;
+}
+.personal-edit li:hover{
+    color: #4dcd4e;
+}
+
+.personal-box{
+    padding: 30px;
+}
+.personal-box .forbidden input,.personal-box .forbidden label{
+    color: #999;
+}
+.personal-box .forbidden input,.personal-box .forbidden select{
+    border:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background: none;
+    cursor: default;
+}

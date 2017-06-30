@@ -1,0 +1,115 @@
+
+/*hello word*/
+
+.helloWords {
+    padding: 12px 0;
+}
+
+.helloWords > p {
+    color: #e0e0e0;
+}
+
+.helloWords > p:first-child {
+    font-size: 24px;
+}
+
+.helloWords > p > span{
+    padding-left: 15px;
+}
+
+/*hello word*/
+
+
+/*input-search 搜索框*/
+.input-search {
+    position: relative;
+    font-size: 16px;
+    border: 1px solid #2DA9E5;
+    margin: 10px 0;
+}
+
+.input-search > input {
+    height: 33px;
+    text-indent: 5px;
+    border: none;
+    padding-right: 40px;
+}
+
+.input-search > label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 26px;
+    margin: 0;
+    padding: 0 7px;
+    height: 33px;
+    line-height: 33px;
+    cursor: pointer;
+    color: #cccccc;
+}
+
+/*input-search 搜索框*/
+
+/*排序 start*/
+.sequence {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.sequence > li {
+    padding: 10px 15px;
+}
+
+.sequence > li:hover {
+    background: #dddddd;
+    cursor: pointer;
+}
+
+.sequence > li.active {
+    color: #2DA9E5;
+}
+
+/*排序  end*/
+
+/*限制一个tab只显示4个book*/
+.limit-show{
+    height: 391px;
+    overflow: hidden;
+}
+/*.show-more,.go-back{*/
+    /*position: absolute;*/
+    /*top: 29px;*/
+    /*right: 0;*/
+    /*text-align: right;*/
+    /*padding: 0 15px 15px;*/
+    /*font-size: 18px;*/
+    /*color: #aaaaaa;*/
+    /*cursor: pointer;*/
+/*}*/
+.show-more:hover,.go-back:hover{
+    text-decoration: none;
+    color: #4dcd4e;
+}
+.prompt-png{
+    position: absolute;
+    right: 27px;
+    bottom: 27px;
+}
+.prompt-png img{
+    width: 30px;
+    height: 30px;
+}
+@media screen and (max-width: 400px){
+    .prompt-png img{
+        width: 15px;
+        height: 15px;
+    }
+    .prompt-png{
+        right: 17px;
+        bottom: 17px;
+    }
+}

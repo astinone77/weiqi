@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--this must be the first of meta-->
+    <%- include('./partial/baseMeta') -%>
+    <link rel="stylesheet" href="/css/master/register.css">
+    <title>注册</title>
+</head>
+
+<body>
+<div class="root-top">
+    <div class="regBox">
+        <div class="regTypeBtn"><a href="#">注册</a></div>
+        <div id="signup" class="formBox">
+            <form>
+                <div class="clearSpacing">
+                    <label for="account">账号</label>
+                    <input type="text" id="account" name="account" placeholder="邮箱/手机号">
+                </div>
+                <div class="clearSpacing">
+                    <label for="nickName">昵称</label>
+                    <input type="text" id="nickName" name="nickName" placeholder="如：围棋高手">
+                </div>
+                <div class="clearSpacing">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" placeholder="至少6位，包含字母和数字">
+                </div>
+                <div class="clearSpacing">
+                    <label for="rePassword">确认密码</label>
+                    <input type="password" id="rePassword" name="rePassword" placeholder="确认密码">
+                </div>
+                <div>
+                    <input type="checkbox" id="agreement" name="agreement">
+                    <label for="agreement">我已阅读并接受<a href="#">《有钱学围棋用户协议》</a></label>
+                </div>
+                <button type="button" class="btn btn-default" id="registerNow">立即注册</button>
+                <div><a href="/login">已有账号，去登陆&nbsp;&gt;</a></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="root-foot">
+    <%- include('./partial/footer') -%>
+</div>
+<script src="/libs/md5/md5.js"></script>
+<script src="/libs/layer/layer.js"></script>
+<script src="/js/master/base.js"></script>
+<script src="/js/master/register.js"></script>
+</body>
+
+</html>

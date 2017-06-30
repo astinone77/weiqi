@@ -1,0 +1,29 @@
+/*go to top*/
+.gototop {
+    position: fixed;
+    bottom: 235px;
+    right: 10px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.gototop.active {
+    opacity: 1;
+    visibility: visible;
+}
+.gototop a {
+    font-size: 52px;
+    color: #cccccc;
+}
+
+.gototop a:hover, .gototop a:active, .gototop a:focus {
+    text-decoration: none;
+    outline: none;
+}
+.gototop a:hover{
+    color: #777;
+}

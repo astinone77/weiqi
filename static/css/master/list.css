@@ -1,0 +1,60 @@
+
+
+.list-content-top{
+    width:100%;
+    /*background: #172A34;*/
+    background: url("/images/186829-106.jpg") repeat;
+}
+.list-content-top .container{
+    position: relative;
+    background: url('/images/weiqi-1.png') no-repeat  right 90%;
+    background-size: 25% 50%;
+}
+
+@media screen and (max-width: 992px){
+    .list-content-top .container{
+        background-size: 25% 40%;
+    }
+}
+@media screen and (max-width: 768px){
+    .list-content-top .container{
+        background-size: 25% 30%;
+    }
+}
+.list-content-top div,.list-content-top h2,.list-content-top li{
+    color: #ffffff;
+    padding: 15px;
+}
+.list-content-top ul li{
+    display: inline-block;
+}
+.catalog-main div div h4{
+    margin: 35px 15px 15px;
+    line-height: 2em;
+}
+.catalog-main .zangjie-nav li{
+    display: inline-block;
+}
+.catalog-main .zangjie-nav li,.catalog-main .zangjie-list li{
+    font-size: 18px;
+    padding: 20px;
+}
+.catalog-main .zangjie-list li{
+    border-top: 1px solid #cccccc;
+}
+.catalog-main .zangjie-list li:last-child{
+    border-bottom: 1px solid #cccccc;
+}
+.catalog-main .zangjie-list li a{
+    font-weight:600;
+}
+.catalog-main{
+    /*margin-top: 10px;*/
+    /*margin-bottom: 10px;*/
+    background-color: #FFFFFF;
+    padding: 30px;
+}
+
+.zangjie-nav .active a{
+    color: #ff353d !important;
+}

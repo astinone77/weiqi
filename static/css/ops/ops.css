@@ -1,0 +1,18 @@
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin: 10px 0; }
+  .fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm9wcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQW1CO0VBQ25CLGlCQUFpQjtFQUNqQixzQkFBc0I7RUFDdEI7SUFDRSxtQkFBbUI7SUFDbkIsT0FBTztJQUNQLFNBQVM7SUFDVCxVQUFVO0lBQ1YsV0FBVztJQUNYLDRCQUE0QjtJQUM1QixlQUFlO0lBQ2YsZ0JBQWdCO0dBQ2pCO0NBQ0YiLCJmaWxlIjoib3BzLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZmlsZWlucHV0LWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBpbnB1dHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAwO1xuICAgIG1hcmdpbjogMDtcbiAgICBvcGFjaXR5OiAwO1xuICAgIGZvbnQtc2l6ZTogMjAwcHggIWltcG9ydGFudDtcbiAgICBkaXJlY3Rpb246IGx0cjtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gIH1cbn0iXX0= */
+
+/*# sourceMappingURL=ops.css.map */

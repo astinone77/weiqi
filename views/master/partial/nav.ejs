@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/css/master/nav.css">
+<nav class="mynav iBox-shadow clearSpacing" role="navigation">
+    <div class="container">
+        <div class="mynav-header">
+            <a class="clearfix" href="/"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;格子岛围棋</a>
+        </div>
+        <ul class="mynav-menu">
+            <% if(!userID){ %>
+            <li><a href="/login">登录</a></li>
+            <li><a href="/register">注册</a></li>
+            <% } else{ %>
+            <li class="mynav-dropdown">
+                <a href="javascript:void(0);" class="username"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;<%= nickName %></a>
+                <div class="dropdown-box">
+                    <div class="clearSpacing">
+                        <div class="personal-head"><img src="/images/weiqi.png" alt="head"></div>
+                        <div class="personal-username">
+                            <p><%= nickName %></p>
+                            <p>
+                                <a href="#">等级:LV<span>3</span></a>
+                                <a href="#">积分:<span>520</span></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="personal-menu clearSpacing">
+                        <div>
+                            <a href="/errorRecord"><span><i class="fa fa-file-text"></i></span><span>我的错题</span></a>
+                        </div>
+                        <div>
+                            <a href="/practiceRecord"><span><i class="fa fa-file-text"></i></span><span>我的练习</span></a>
+                        </div>
+                        <div>
+                            <a href="/throughRecord"><span><i class="fa fa-heart"></i></span><span>闯关记录</span></a>
+                        </div>
+                        <div>
+                            <a href="/personal"><span><i class="fa fa-sliders"></i></span><span>个性设置</span></a>
+                        </div>
+                    </div>
+                    <div class="latest-record hide">
+                        <p><span><i class="fa fa-clock-o"></i></span><span>上次的进度：</span></p>
+                        <p class="clearSpacing">
+                            <span class="record-title">手筋专线训练：从入门到10级</span>
+                            <span class="go-on"><a href="javascript:void(0);">继续</a></span>
+                        </p>
+                    </div>
+                    <div>
+                        <button class="btn btn-sm btn-primary pull-right" id="loginOut">退出登陆</button>
+                    </div>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</nav>
+<script>
+    $("#loginOut").click(function () {
+        ajaxModel.getData('/api/loginOut').then(function (res) {
+            if (res.code == 200) {
+                window.location.reload();
+            }
+        })
+    })
+</script>

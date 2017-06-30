@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--this must be the first of meta-->
+    <%- include('./partial/baseMeta') -%>
+    <link rel="stylesheet" href="/css/master/personal.css">
+    <title>个人中心</title>
+</head>
+<body>
+    <!--s:nav-->
+    <%- include('./partial/nav') -%>
+    <!--s:nav-->
+    <!--s:content-->
+    <div class="width100 content-top">
+        <div class="container clearfix">
+            <div class="personal-head pull-left"><img src="/images/weiqi.png" alt="head"></div>
+            <div class="helloWords">
+                <% if(userID){ %>
+                <p><span><%= nickName %></span>，<span class="thisHour"></span></p>
+                <% } else{ %>
+                <p><span>游客</span>，<span>早上好</span>！</p>
+                <% } %>
+                <p><span>《重送绝句》</span>&nbsp;<span>唐·杜牧</span>&nbsp;
+                    <span>绝艺如君天下少，闲人似我世间无。
+            别后竹窗风雪夜，一灯明暗复吴图。</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container settings">
+        <h3 class="pic-classic"><img src="/images/bg-title-pic.png">个性设置</h3>
+    </div>
+    <div class="container personal-main book-shadow">
+        <ul class="personal-edit list-inline text-right">
+            <li id="personalEdit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;编辑</li>
+            <li id="personalSave"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;保存</li>
+        </ul>
+        <div class="personal-box">
+            <form class="form-horizontal forbidden" role="form">
+                <fieldset disabled>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">昵称：</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name="nickName" value=<%= nickName %>>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="select" class="col-sm-2 control-label">性别：</label>
+                        <div class="col-sm-10">
+                            <label style="padding-left: 13px;" class="checkbox-inline">
+                                <input <% if (gender == '男') { %>checked <% } %> type="radio" name="gender" value="男" > 男
+                            </label>
+                            <label class="checkbox-inline">
+                                <input <% if (gender == '女') { %>checked <% } %> type="radio" name="gender" value="女"> 女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group has-warning">
+                        <label class="col-sm-2 control-label" for="inputWarning">
+                            真实姓名：
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="realName" value=<%= realName %> >
+                        </div>
+                    </div>
+                    <div class="form-group has-error">
+                        <label class="col-sm-2 control-label" for="inputError">
+                            QQ号码：
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="idcard" value=<%= idcard %> >
+                        </div>
+                    </div>
+                    <div class="form-group has-error">
+                        <label class="col-sm-2 control-label" for="inputError">
+                            电话号码：
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="phone" value=<%= phone %> >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 control-label">
+                            个人介绍：
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="avatar" value=<%= avatar %> >
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!--s:content-->
+    <!--s: footer-->
+    <%- include('./partial/footer') -%>
+    <%- include('./partial/gototop') -%>
+    <!--e: footer-->
+    <script src="/js/master/getHelloWord.js"></script>
+    <script src="/libs/layer/layer.js"></script>
+    <script>
+//        function ajaxStart() {
+//            layer.open({
+//                type: 3,
+//                content: '稍等片刻...'
+//            });
+//        }
+        function editEvent() {
+            this.init();
+        }
+        editEvent.prototype = {
+            init:function () {
+                getThisHours();
+                $('.personal-box').find('form').addClass('forbidden');
+                $('.personal-box').find('fieldset').prop('disabled',true);
+                this.editClickEvent();
+            },
+            editClickEvent:function () {
+                $('#personalEdit').on('click',function () {
+                    $('.personal-box').find('form').removeClass('forbidden');
+                    $('.personal-box').find('fieldset').removeAttr('disabled');
+                });
+                $('#personalSave').on('click',function () {
+                    var disable = $('.personal-box').find('fieldset').prop('disabled');
+                    if (!disable){
+                        var iForm = $('form');
+                        var data = getFormData(iForm);
+                        console.log(data);
+                        if (!isNull(data)){
+//                            ajaxStart();
+                            ajaxModel.postData('/api/updateUserInformation',data).then(function (result) {
+                                if (result.code === 200){
+                                    layer.msg(result.message);
+                                    location.reload();
+                                }else {
+                                    layer.msg('Ops~遇到问题了，赶快刷新页面吧');
+                                }
+                            })
+                        }
+                    }
+
+                })
+            }
+        }
+        $(function () {
+            new editEvent();
+        })
+    </script>
+</body>
+</html>

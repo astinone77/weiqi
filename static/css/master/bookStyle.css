@@ -1,0 +1,171 @@
+/*book-box 卡片样式 start*/
+.book-box {
+    width: 100%;
+    margin: 15px auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #dadada;
+    transition: 0.3s;
+}
+
+.book-box:hover {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.box-title {
+    padding: 10px;
+}
+
+.box-title > span{
+    display: inline-block;
+    font-size: 18px;
+    vertical-align: top;
+}
+
+.box-title > .title-lights {
+    color: #2DA9E5;
+    width: 10%;
+    text-align: center;
+}
+
+.box-title > .book-title {
+    display: inline-block;
+    width:90%;
+    font-size: 18px;
+    padding-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 400px){
+    .box-title > .book-title {
+        font-size: 14px;
+        padding-left: 5px;
+    }
+}
+
+.box-img {
+    position: relative;
+    padding: 10px;
+}
+.box-img:hover > .book-info{
+    visibility: visible;
+    opacity: 1;
+}
+.box-img:hover > .book-info h4{
+    margin-top:30%;
+}
+
+.box-img:hover > .book-info p{
+    margin-top:10%;
+}
+
+.book-info{
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    background-color: rgba(210, 210, 210, 0.8);
+    background-clip: content-box;
+    position: absolute;
+    width:100%;
+    height:100%;
+    padding: 10px;
+    margin:auto;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+}
+.book-info h4,.book-info p{
+    text-align: center;
+    transition: .5s;
+}
+.book-info h4{
+    margin-top:20%;
+}
+.book-info p{
+    margin-top:40%;
+}
+
+@media screen and (max-width: 400px){
+    .book-info h4{
+        margin-top:0;
+        font-size: 14px;
+    }
+    .book-info p{
+        margin-top:25%;
+        font-size: 12px;
+    }
+    .box-img:hover > .book-info h4{
+        margin-top:10%;
+    }
+    .box-img:hover > .book-info p{
+        margin-top:5%;
+    }
+}
+
+.box-bottom {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.box-bottom > div:last-child {
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.box-bottom .book-btn a {
+    display: inline-block;
+    color: #FFFFFF;
+    width: 48%;
+    border: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 400px){
+    .box-bottom .book-btn a.btn.btn-info{
+        font-size: 12px;
+    }
+}
+.box-bottom > .book-btn > button{
+    display: inline-block;
+    width:48%;
+    border:none;
+}
+@media screen and (max-width: 400px){
+    .box-bottom > .book-btn > button{
+        font-size: 12px;
+        padding: 5px 2px;
+    }
+}
+.content-main div.row.active {
+    display: block;
+}
+
+/*卡片中的进度条 start*/
+.progress.progress-striped {
+    height: 5px;
+    margin: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background-color: #dadada;
+}
+
+.progress-bar.progress-bar-success {
+    background-color: rgba(255,255,255,0);
+    border:none;
+}
+
+/*卡片中的进度条 end*/
+
+/*book-box 卡片样式 end*/

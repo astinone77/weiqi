@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--this must be the first of meta-->
+    <%- include('./partial/baseMeta') -%>
+    <link rel="stylesheet" href="/css/master/record.css">
+    <script src="/js/master/record.js"></script>
+    <title>闯关记录</title>
+</head>
+<body>
+<!--s:nav-->
+<%- include('./partial/nav') -%>
+<!--s:nav-->
+<!--s:content-->
+<div class="width100 content-top">
+    <div class="container clearfix">
+        <div class="personal-head pull-left"><img src="/images/weiqi.png" alt="head"></div>
+        <div class="helloWords">
+            <p><span><%= nickName %></span>，<span>早上好</span>！</p>
+            <p>《<span>重送绝句</span>》&nbsp;<span>唐·杜牧</span>&nbsp;
+                <span>绝艺如君天下少，闲人似我世间无。
+            别后竹窗风雪夜，一灯明暗复吴图。</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="width100">
+    <ul class="container list-inline classify-btn clearfix">
+        <li class="active">闯关记录</li>
+        <li>我的练习</li>
+        <li>我的收藏</li>
+    </ul>
+</div>
+<div class="container content-main">
+    <ul class="sequence list-inline">
+        <li>按时间排序&nbsp;<i class="fa fa-long-arrow-up"></i></li>
+        <li>按进度排序&nbsp;<i class="fa fa-long-arrow-up"></i></li>
+    </ul>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+            <div class="book-box  book-shadow">
+                <div class="box-title">
+                    <span class="title-lights"><i class="fa fa-circle"></i></span>&nbsp;&nbsp;
+                    <sapn>闯关记录</sapn>
+                </div>
+                <div class="box-img">
+                    <a href="/detail" class="no-underline">
+                        <img class="img-responsive" src="/images/items.jpg" alt="book-cover">
+                    </a>
+                </div>
+                <div class="box-bottom">
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" role="progressbar"
+                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                             style="width: 30%;">
+                            <span class="sr-only">30% 完成（成功）</span>
+                        </div>
+                    </div>
+                    <div><a href="/detail" class="no-underline">继续闯关</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+            <div class="book-box  book-shadow">
+                <div class="box-title">
+                    <span class="title-lights"><i class="fa fa-circle"></i></span>&nbsp;&nbsp;
+                    <sapn>闯关记录</sapn>
+                </div>
+                <div class="box-img">
+                    <a href="/detail" class="no-underline">
+                        <img class="img-responsive" src="/images/items.jpg" alt="book-cover">
+                    </a>
+                </div>
+                <div class="box-bottom">
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" role="progressbar"
+                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                             style="width: 50%;">
+                            <span class="sr-only">50% 完成（成功）</span>
+                        </div>
+                    </div>
+                    <div><a href="/detail" class="no-underline">继续闯关</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+            <div class="book-box  book-shadow">
+                <div class="box-title">
+                    <span class="title-lights"><i class="fa fa-circle"></i></span>&nbsp;&nbsp;
+                    <sapn>闯关记录</sapn>
+                </div>
+                <div class="box-img">
+                    <a href="/detail" class="no-underline">
+                        <img class="img-responsive" src="/images/items.jpg" alt="book-cover">
+                    </a>
+                </div>
+                <div class="box-bottom">
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" role="progressbar"
+                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                             style="width: 70%;">
+                            <span class="sr-only">70% 完成（成功）</span>
+                        </div>
+                    </div>
+                    <div><a href="/detail" class="no-underline">继续闯关</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+            <div class="book-box  book-shadow">
+                <div class="box-title">
+                    <span class="title-lights"><i class="fa fa-circle"></i></span>&nbsp;&nbsp;
+                    <sapn>闯关记录</sapn>
+                </div>
+                <div class="box-img">
+                    <a href="/detail" class="no-underline">
+                        <img class="img-responsive" src="/images/items.jpg" alt="book-cover">
+                    </a>
+                </div>
+                <div class="box-bottom">
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" role="progressbar"
+                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                             style="width: 100%;">
+                            <span class="sr-only">100% 完成（成功）</span>
+                        </div>
+                    </div>
+                    <div><a href="/detail" class="no-underline">继续闯关</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--s:content-->
+<!--s: footer-->
+<%- include('./partial/footer') -%>
+<%- include('./partial/gototop') -%>
+<!--e: footer-->
+<script>
+    function bindEvent() {
+        this.init();
+    }
+    bindEvent.prototype = {
+        init:function () {
+            this.sortBtnClickEvent();
+            this.progressListener();
+        },
+        sortBtnClickEvent:function(){
+            var sortBtn = $('.classify-btn');
+            $('li',sortBtn).on('click',function () {
+                $('li',sortBtn).removeClass('active');
+                $(this).addClass('active');
+            })
+        },
+        progressListener:function () {
+            var boxButton = $('.box-bottom');
+            var progressStriped = $('.progress-striped',boxButton);
+            progressStriped.each(function () {
+                var progressFather = $(this).width();
+                var progressChild = $(this).find('.progress-bar').width();
+                if (progressChild == progressFather){
+                    $(this).next().find('a').text('再次闯关');
+                }else {
+                    $(this).next().find('a').text('继续闯关');
+                }
+            })
+        }
+    }
+    $(function () {
+        new bindEvent();
+    });
+</script>
+</body>
+</html> 

@@ -1,0 +1,80 @@
+<% function isObjNull(obj) {
+    for (key in obj){
+        return false;
+    }
+    return true;
+}%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <%- include('./partial/baseMeta') -%>
+    <link rel="stylesheet" href="/css/master/index.css">
+    <link rel="stylesheet" href="/css/master/footer.css">
+    <link rel="stylesheet" href="/css/master/list.css">
+    <title>列表页</title>
+</head>
+<body>
+<!--s:头部-->
+<%- include('./partial/nav') -%>
+<!--e:头部-->
+<div class="list-content-top">
+    <div class="container">
+        <div>
+            <span>课程</span>
+            <i class="fa fa-angle-right"></i>
+            <span>教程</span>
+        </div>
+        <h2><i class="fa fa-location-arrow"></i><%= result.book.name %></h2>
+        <ul>
+            <% if (pattern == "practice" && userInformation && userInformation.length > 0) { %>
+            <li>
+                <a href="/detail/<%= userInformation[0].bookID %>/<%= userInformation[0].catalogID %>/<%= userInformation[0].questionIndex %>?pattern=<%= pattern %>"
+                   class="btn btn-primary">继续游戏</a>
+            </li>
+            <% } %>
+            <li>难度系数: <span><%= result.book.rank %></span></li>
+        </ul>
+    </div>
+</div>
+<div class="catalog-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>简介：无！</h4>
+                <ul class="zangjie-nav clearwordspace">
+                    <li class="active"><a href="#">章节</a></li>
+                    <li class="hide"><a href="#">评论</a></li>
+                </ul>
+                <ul class="zangjie-list">
+                    <% for(var i = 0; i < result.catalog.length; i++) { %>
+                    <li>
+                        <i class="fa fa-flag"></i>&nbsp;&nbsp;
+                        <a href="/detail/<%= result.catalog[i].bookID %>/<%= result.catalog[i].catalogID %>/0?pattern=<%= pattern %>"><%= result.catalog[i].catalogName %></a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <!--<div class="col-md-3">-->
+
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<!--s: footer-->
+<% if (result.catalog && isObjNull(result.catalog)) { %>
+<%- include('./partial/footer-fixed') -%>
+<% }else { %>
+<%- include('./partial/footer') -%>
+<% } %>
+<%- include('./partial/gototop') -%>
+<!--e: footer-->
+
+<script src="/js/master/base.js"></script>
+<script src="/js/master/list.js"></script>
+<script>
+    setParamAfterUrl();
+</script>
+</body>
+</html>

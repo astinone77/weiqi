@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/ops/ops-base.css">
+    <link rel="stylesheet" href="/css/ops/ops.css">
+    <title>后台管理系统</title>
+</head>
+<body>
+<div class="container panel">
+    <div class="page-header">
+        <h3>后台管理系统</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="thinkme-fileinput">
+                <div class="btn btn-success fileinput-button">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>上传sgf文件</span>
+                    <input id="fileupload" type="file" data-url="/api/sgfUpload" name="files[]" multiple=""/>
+                </div>
+                <div class="progress">
+                    <div id="progress"  class="progress-bar progress-bar-striped active">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/libs/upload/jquery.ui.widget.js"></script>
+<script src="/libs/upload/jquery.iframe-transport.js"></script>
+<script src="/libs/upload/jquery.fileupload.js"></script>
+<script src="/libs/noty/noty.js"></script>
+<script src="/js/ops/ops-base.js"></script>
+<script src="/js/ops/ops.js"></script>
+</body>
+</html>
